@@ -114,6 +114,9 @@
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
+      if (!this.rows().length) {
+        return false;
+      }
       var rows = this.rows();
       return rows[0].some((value, index) => {
         return this.hasColConflictAt(index);
